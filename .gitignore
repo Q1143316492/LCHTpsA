@@ -1,0 +1,84 @@
+# Unreal Engine typical ignores
+# See https://github.com/github/gitignore/blob/main/UnrealEngine.gitignore for reference
+
+# Binary and build folders
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+Build/
+
+# Editor and IDE
+.vscode/
+.vs/
+*.sln
+*.suo
+*.user
+*.userprefs
+*.VC.db
+*.VC.VC.opendb
+*.opensdf
+*.sdf
+
+# Visual Studio build output
+*.obj
+*.o
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.idb
+
+# Logs and temporary files
+*.log
+*.tmp
+*.cache
+
+# Packaging and cooked content
+*.pak
+*.ucas
+*.utoc
+Saved/Cooked/
+
+# Mac and Windows system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archives and compressed files
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+
+# Unreal generated project files
+*.xcodeproj
+*.xcworkspace
+*.xcuserstate
+*.xcuserdata/
+
+# Ignore build artifacts from UnrealBuildTool and intermediate tool files
+Engine/Binaries/
+Engine/DerivedDataCache/
+Engine/Intermediate/
+
+# Note on Content folder: by default we track Content/ in source control. If you prefer to exclude
+# large binary assets, configure Git LFS and add patterns to .gitattributes instead of ignoring
+# the whole Content/ directory here.
+
+# Git LFS hint (not applied automatically):
+# Add a .gitattributes file with patterns like:
+# Content/** filter=lfs diff=lfs merge=lfs -text
+
+/Content/*
+
+# Local config
+*.local
+*.localbuild
+
+# Misc
+.idea/
+.vscode/*
+
+# Keep this file committed to the repo root
