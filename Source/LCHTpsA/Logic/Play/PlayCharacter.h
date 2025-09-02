@@ -4,9 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "Camera/CameraComponent.h"
-#include "GameFramework/SpringArmComponent.h"
+#include "Logging/LogMacros.h"
 #include "PlayCharacter.generated.h"
+
+class UCameraComponent;
+class USpringArmComponent;
+class UInputAction;
+struct FInputActionValue;
 
 /**
  * Character class for Play scenarios in the third-person game
@@ -36,4 +40,35 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* FollowCamera;
+
+protected:
+	UPROPERTY(EditAnywhere, Category = "Input")
+	UInputAction* JumpAction;
+
+	UPROPERTY(EditAnywhere, Category = "Input")
+	UInputAction* MoveAction;
+
+	UPROPERTY(EditAnywhere, Category = "Input")
+	UInputAction* LookAction;
+
+	UPROPERTY(EditAnywhere, Category = "Input")
+	UInputAction* MouseLookAction;
+
+protected:
+	// Handlers used by Enhanced Input bindings
+	void Move(const FInputActionValue& Value);
+	void Look(const FInputActionValue& Value);
+
+public:
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	virtual void DoMove(float Right, float Forward);
+
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	virtual void DoLook(float Yaw, float Pitch);
+
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	virtual void DoJumpStart();
+
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	virtual void DoJumpEnd();
 };

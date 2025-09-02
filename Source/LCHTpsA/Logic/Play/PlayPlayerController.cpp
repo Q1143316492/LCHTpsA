@@ -1,10 +1,13 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "Logic/Play/PlayPlayerController.h"
+#include "EnhancedInputSubsystems.h"
+#include "Engine/LocalPlayer.h"
+#include "InputMappingContext.h"
+#include "Widgets/Input/SVirtualJoystick.h"
 
 APlayPlayerController::APlayPlayerController()
 {
-	// Set this actor to call Tick() every frame
 	PrimaryActorTick.bCanEverTick = true;
 }
 
@@ -12,33 +15,35 @@ void APlayPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// Play-specific player controller initialization
 }
 
 void APlayPlayerController::SetupInputComponent()
 {
 	Super::SetupInputComponent();
 
-	// Setup input bindings for Play scenarios
+	if (IsLocalPlayerController())
+	{
+		if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer()))
+		{
+			for (UInputMappingContext* CurrentContext : DefaultMappingContexts)
+			{
+				Subsystem->AddMappingContext(CurrentContext, 0);
+			}
+		}
+	}
 }
 
 void APlayPlayerController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-	// Player controller update logic for Play scenarios
 }
 
 void APlayPlayerController::OnPossess(APawn* InPawn)
 {
 	Super::OnPossess(InPawn);
-
-	// Handle pawn possession in Play scenarios
 }
 
 void APlayPlayerController::OnUnPossess()
 {
 	Super::OnUnPossess();
-
-	// Handle pawn unpossession in Play scenarios
 }
