@@ -41,6 +41,9 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* FollowCamera;
 
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Mesh", meta = (AllowPrivateAccess = "true"))
+    class USkeletalMeshComponent* SubMeshComponent;
+
 protected:
 	UPROPERTY(EditAnywhere, Category = "Input")
 	UInputAction* JumpAction;

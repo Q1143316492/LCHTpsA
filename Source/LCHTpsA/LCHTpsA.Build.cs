@@ -18,7 +18,16 @@ public class LCHTpsA : ModuleRules
 			"StateTreeModule",
 			"GameplayStateTreeModule",
 			"UMG",
-			"Slate"
+			"Slate",
+
+			"AnimationWarpingRuntime",
+			"GameplayAbilities",
+			"GameplayTags",
+			"MotionTrajectory",
+			"MotionWarping",
+			"PoseSearch",
+			"GameplayTasks",
+			"IKRig",
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] { });
@@ -27,19 +36,6 @@ public class LCHTpsA : ModuleRules
 			"LCHTpsA",
 			"LCHTpsA/Logic",
 			"LCHTpsA/Logic/Play",
-			"LCHTpsA/Variant_Platforming",
-			"LCHTpsA/Variant_Platforming/Animation",
-			"LCHTpsA/Variant_Combat",
-			"LCHTpsA/Variant_Combat/AI",
-			"LCHTpsA/Variant_Combat/Animation",
-			"LCHTpsA/Variant_Combat/Gameplay",
-			"LCHTpsA/Variant_Combat/Interfaces",
-			"LCHTpsA/Variant_Combat/UI",
-			"LCHTpsA/Variant_SideScrolling",
-			"LCHTpsA/Variant_SideScrolling/AI",
-			"LCHTpsA/Variant_SideScrolling/Gameplay",
-			"LCHTpsA/Variant_SideScrolling/Interfaces",
-			"LCHTpsA/Variant_SideScrolling/UI"
 		});
 
 		// Uncomment if you are using Slate UI

@@ -35,6 +35,9 @@ APlayCharacter::APlayCharacter()
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
+
+	SubMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SubMesh"));
+	SubMeshComponent->SetupAttachment(GetMesh());
 }
 
 void APlayCharacter::BeginPlay()
