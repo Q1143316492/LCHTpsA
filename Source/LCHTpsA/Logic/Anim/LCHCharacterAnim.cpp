@@ -6,6 +6,7 @@
 #include "Kismet/KismetMathLibrary.h"
 #include "PoseSearch/MotionMatchingAnimNodeLibrary.h"
 #include "Camera/CameraComponent.h"
+#include "Logic/Play/PlayCharacter.h"
 
 
 ULCHCharacterAnim::ULCHCharacterAnim()
@@ -22,7 +23,7 @@ ULCHCharacterAnim::ULCHCharacterAnim()
 void ULCHCharacterAnim::NativeInitializeAnimation()
 {
     Super::NativeInitializeAnimation();
-
+    CachedCharacter = Cast<APlayCharacter>(TryGetPawnOwner());
 }
 
 void ULCHCharacterAnim::NativeUpdateAnimation(float DeltaSeconds)
@@ -75,11 +76,32 @@ void ULCHCharacterAnim::GenerateTrajectory(float DeltaSeconds)
 
 bool ULCHCharacterAnim::IsStarting() const
 {
-    return false;
+    return FutureVelocity.Size2D() >= SpeedDirection.Size2D() + 100.f && IsMoving();
 }
 
 bool ULCHCharacterAnim::ShouldTurnInPlace() const
 {
+    if (CachedCharacter.IsValid())
+    {
+        FRotator AnimRotation = CachedCharacter->GetFollowCamera()->GetComponentRotation();
+        AnimRotation += MeshAndActorOffset;
+        FRotator CharacterRotation = CachedCharacter->GetMesh()->GetComponentRotation();
+        FRotator RotationDelta = UKismetMathLibrary::NormalizedDeltaRotator(AnimRotation, CharacterRotation);
+
+        if (IsDebugDraw() && IsInGameThread())
+        {
+            FVector AnimVector = AnimRotation.Vector();
+            FVector CharacterVector = CharacterRotation.Vector();
+            FVector InCenterPoint = CachedCharacter->GetActorLocation();
+            InCenterPoint.Z += 50.f;
+            FVector AnimPostion = AnimVector * 200.f + InCenterPoint;
+
+            DrawDebugString(GetWorld(), AnimPostion, RotationDelta.ToString(), nullptr, FColor::Red, 0.1f);
+            DrawDebugDirectionalArrow(GetWorld(), InCenterPoint, AnimPostion, 2.f, FColor::Red, false, 0.1f);
+            DrawDebugDirectionalArrow(GetWorld(), InCenterPoint, CharacterVector * 200.f + InCenterPoint, 2.f, FColor::Green, false, 0.1f);
+        }
+        return FMath::Abs(RotationDelta.Yaw) > 35.f;
+    }
     return false;
 }
 

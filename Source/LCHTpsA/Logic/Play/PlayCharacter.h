@@ -34,6 +34,8 @@ public:
 
     virtual void UnPossessed() override;
 
+    FORCEINLINE UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
 protected:
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
     USpringArmComponent* CameraBoom;

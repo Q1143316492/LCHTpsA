@@ -15,6 +15,7 @@
 #include "Logic/Core/LCHCoreTypes.h"
 #include "LCHCharacterAnim.generated.h"
 
+class APlayCharacter;
 /**
  * for movement matching
  */
@@ -96,6 +97,9 @@ public:
     FRotator MeshAndActorOffset;
 
 protected:
+    UPROPERTY()
+    TWeakObjectPtr<APlayCharacter> CachedCharacter;
+
     FResetBool bDelaySpeed;
 
     UPROPERTY()
