@@ -12,16 +12,16 @@
 UCLASS()
 class LCHTPSA_API APlayGameMode : public AGameModeBase
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	/** Constructor */
-	APlayGameMode();
+    /** Constructor */
+    APlayGameMode();
 
 protected:
-	/** Called when the game starts or when spawned */
-	virtual void BeginPlay() override;
+    /** Called when the game starts or when spawned */
+    virtual void BeginPlay() override;
 
-	/** Called to initialize the game mode */
-	virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
+    /** Called to initialize the game mode */
+    virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
 };

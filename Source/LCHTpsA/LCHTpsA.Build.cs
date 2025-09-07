@@ -4,47 +4,47 @@ using UnrealBuildTool;
 
 public class LCHTpsA : ModuleRules
 {
-	public LCHTpsA(ReadOnlyTargetRules Target) : base(Target)
-	{
-		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+    public LCHTpsA(ReadOnlyTargetRules Target) : base(Target)
+    {
+        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PublicDependencyModuleNames.AddRange(new string[] {
-			"Core",
-			"CoreUObject",
-			"Engine",
-			"InputCore",
-			"EnhancedInput",
-			"AIModule",
-			"StateTreeModule",
-			"GameplayStateTreeModule",
-			"UMG",
-			"Slate",
+        PublicDependencyModuleNames.AddRange(new string[] {
+            "Core",
+            "CoreUObject",
+            "Engine",
+            "InputCore",
+            "EnhancedInput",
+            "AIModule",
+            "StateTreeModule",
+            "GameplayStateTreeModule",
+            "UMG",
+            "Slate",
 
-			"AnimationWarpingRuntime",
-			"GameplayAbilities",
-			"GameplayTags",
-			"MotionTrajectory",
-			"MotionWarping",
-			"PoseSearch",
-			"GameplayTasks",
-			"IKRig",
-		});
+            "AnimationWarpingRuntime",
+            "GameplayAbilities",
+            "GameplayTags",
+            "MotionTrajectory",
+            "MotionWarping",
+            "PoseSearch",
+            "GameplayTasks",
+            "IKRig",
+        });
 
-		PrivateDependencyModuleNames.AddRange(new string[] { });
+        PrivateDependencyModuleNames.AddRange(new string[] { });
 
-		PublicIncludePaths.AddRange(new string[] {
-			"LCHTpsA",
-			"LCHTpsA/Logic",
-			"LCHTpsA/Logic/Play",
-			"LCHTpsA/Logic/Anim",
-		});
+        PublicIncludePaths.AddRange(new string[] {
+            "LCHTpsA",
+            "LCHTpsA/Logic",
+            "LCHTpsA/Logic/Play",
+            "LCHTpsA/Logic/Anim",
+        });
 
-		// Uncomment if you are using Slate UI
-		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
+        // Uncomment if you are using Slate UI
+        // PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
 
-		// Uncomment if you are using online features
-		// PrivateDependencyModuleNames.Add("OnlineSubsystem");
+        // Uncomment if you are using online features
+        // PrivateDependencyModuleNames.Add("OnlineSubsystem");
 
-		// To include OnlineSubsystemSteam, add it to the plugins section in your uproject file with the Enabled attribute set to true
-	}
+        // To include OnlineSubsystemSteam, add it to the plugins section in your uproject file with the Enabled attribute set to true
+    }
 }

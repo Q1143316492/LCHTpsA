@@ -14,38 +14,38 @@
 UCLASS(Blueprintable, BlueprintType)
 class LCHTPSA_API ULCHAnimBase : public UAnimInstance
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	ULCHAnimBase();
+    ULCHAnimBase();
 
 protected:
-	virtual void NativeInitializeAnimation() override;
+    virtual void NativeInitializeAnimation() override;
 
-	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
+    virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 
-	UFUNCTION(BlueprintPure, Category = "RedirectAnim", meta = (BlueprintThreadSafe))
-	FRetargetProfile GetRetargetProfile() const;
+    UFUNCTION(BlueprintPure, Category = "RedirectAnim", meta = (BlueprintThreadSafe))
+    FRetargetProfile GetRetargetProfile() const;
 
 public:
-	/**
-	 * The IK Retargeter asset to use for this animation instance.
-	 */
-	UPROPERTY (VisibleAnywhere, BlueprintReadonly,Category = "AnimAttrubute")
-	UIKRetargeter* IKRetargeter;
+    /**
+     * The IK Retargeter asset to use for this animation instance.
+     */
+    UPROPERTY (VisibleAnywhere, BlueprintReadonly,Category = "AnimAttrubute")
+    UIKRetargeter* IKRetargeter;
 
-	UPROPERTY (EditDefaultsOnly, Category = "AnimAttrubute")
-	TMap<FName, UIKRetargeter*> IKRetargeter_Map;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AnimAttribute")
-	FRetargetIKChainSettings ChainSettings_LeftArm;
+    UPROPERTY (EditDefaultsOnly, Category = "AnimAttrubute")
+    TMap<FName, UIKRetargeter*> IKRetargeter_Map;
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AnimAttribute")
-	FRetargetIKChainSettings ChainSettings_RightArm;
+    FRetargetIKChainSettings ChainSettings_LeftArm;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AnimAttribute")
-	FRetargetProfile CustomRetargetProfile;
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AnimAttribute")
+    FRetargetIKChainSettings ChainSettings_RightArm;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AnimAttribute")
+    FRetargetProfile CustomRetargetProfile;
 
 protected:
-	void UpdateChainSettings();
+    void UpdateChainSettings();
 };

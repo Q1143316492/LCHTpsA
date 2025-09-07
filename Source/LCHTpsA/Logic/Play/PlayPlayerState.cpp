@@ -4,34 +4,34 @@
 
 APlayPlayerState::APlayPlayerState()
 {
-	// Set this actor to call Tick() every frame
-	PrimaryActorTick.bCanEverTick = true;
+    // Set this actor to call Tick() every frame
+    PrimaryActorTick.bCanEverTick = true;
 }
 
 void APlayPlayerState::BeginPlay()
 {
-	Super::BeginPlay();
+    Super::BeginPlay();
 
-	// Play-specific player state initialization
+    // Play-specific player state initialization
 }
 
 void APlayPlayerState::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
+    Super::Tick(DeltaTime);
 
-	// Update player state logic for Play scenarios
+    // Update player state logic for Play scenarios
 }
 
 void APlayPlayerState::CopyProperties(APlayerState* PlayerState)
 {
-	Super::CopyProperties(PlayerState);
+    Super::CopyProperties(PlayerState);
 
-	// Copy Play-specific player state properties
+    // Copy Play-specific player state properties
 }
 
 void APlayPlayerState::Reset()
 {
-	Super::Reset();
+    Super::Reset();
 
-	// Reset Play-specific player state data
+    // Reset Play-specific player state data
 }

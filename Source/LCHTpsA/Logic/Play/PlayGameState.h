@@ -12,20 +12,20 @@
 UCLASS()
 class LCHTPSA_API APlayGameState : public AGameStateBase
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	/** Constructor */
-	APlayGameState();
+    /** Constructor */
+    APlayGameState();
 
 protected:
-	/** Called when the game starts or when spawned */
-	virtual void BeginPlay() override;
+    /** Called when the game starts or when spawned */
+    virtual void BeginPlay() override;
 
-	/** Called every frame */
-	virtual void Tick(float DeltaTime) override;
+    /** Called every frame */
+    virtual void Tick(float DeltaTime) override;
 
 public:
-	/** Called when game state is ready to receive updates */
-	virtual void HandleBeginPlay() override;
+    /** Called when game state is ready to receive updates */
+    virtual void HandleBeginPlay() override;
 };

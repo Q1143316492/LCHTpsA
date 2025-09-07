@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 public class LCHTpsAEditorTarget : TargetRules
 {
-	public LCHTpsAEditorTarget(TargetInfo Target) : base(Target)
-	{
-		Type = TargetType.Editor;
-		DefaultBuildSettings = BuildSettingsVersion.V5;
-		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_6;
-		ExtraModuleNames.Add("LCHTpsA");
-	}
+    public LCHTpsAEditorTarget(TargetInfo Target) : base(Target)
+    {
+        Type = TargetType.Editor;
+        DefaultBuildSettings = BuildSettingsVersion.V5;
+        IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_6;
+        ExtraModuleNames.Add("LCHTpsA");
+    }
 }

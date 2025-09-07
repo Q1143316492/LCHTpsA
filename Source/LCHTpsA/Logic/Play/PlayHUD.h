@@ -12,20 +12,20 @@
 UCLASS()
 class LCHTPSA_API APlayHUD : public AHUD
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	/** Constructor */
-	APlayHUD();
+    /** Constructor */
+    APlayHUD();
 
 protected:
-	/** Called when the game starts or when spawned */
-	virtual void BeginPlay() override;
+    /** Called when the game starts or when spawned */
+    virtual void BeginPlay() override;
 
-	/** Called to draw the HUD */
-	virtual void DrawHUD() override;
+    /** Called to draw the HUD */
+    virtual void DrawHUD() override;
 
 public:
-	/** Called every frame */
-	virtual void Tick(float DeltaTime) override;
+    /** Called every frame */
+    virtual void Tick(float DeltaTime) override;
 };

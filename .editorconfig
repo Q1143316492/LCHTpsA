@@ -1,0 +1,23 @@
+# Top-level EditorConfig to enforce 4-space indentation across the project
+# See https://editorconfig.org
+root = true
+
+# Default for text-based source files
+[*.{h,hpp,hh,hxx,cpp,cc,cxx,ipp,c,cs,ini,txt,usf,ush,py,json,md,build.cs,target.cs,uproject,uplugin}]
+indent_style = space
+indent_size = 4
+# Tab width for alignment in editors that show tabs (should match indent_size)
+tab_width = 4
+end_of_line = crlf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+
+# YAML typically uses 2 spaces
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# Makefiles require tabs for recipes; do not convert here
+[Makefile]
+indent_style = tab

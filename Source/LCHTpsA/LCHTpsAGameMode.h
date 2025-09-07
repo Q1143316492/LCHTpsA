@@ -12,12 +12,12 @@
 UCLASS(abstract)
 class ALCHTpsAGameMode : public AGameModeBase
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	
-	/** Constructor */
-	ALCHTpsAGameMode();
+    
+    /** Constructor */
+    ALCHTpsAGameMode();
 };
 
 

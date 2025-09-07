@@ -9,24 +9,24 @@
 
 APlayGameMode::APlayGameMode()
 {
-	// Set default classes for Play game mode
-	PlayerControllerClass = APlayPlayerController::StaticClass();
-	DefaultPawnClass = APlayCharacter::StaticClass();
-	GameStateClass = APlayGameState::StaticClass();
-	PlayerStateClass = APlayPlayerState::StaticClass();
-	HUDClass = APlayHUD::StaticClass();
+    // Set default classes for Play game mode
+    PlayerControllerClass = APlayPlayerController::StaticClass();
+    DefaultPawnClass = APlayCharacter::StaticClass();
+    GameStateClass = APlayGameState::StaticClass();
+    PlayerStateClass = APlayPlayerState::StaticClass();
+    HUDClass = APlayHUD::StaticClass();
 }
 
 void APlayGameMode::BeginPlay()
 {
-	Super::BeginPlay();
+    Super::BeginPlay();
 
-	// Play-specific initialization logic goes here
+    // Play-specific initialization logic goes here
 }
 
 void APlayGameMode::InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage)
 {
-	Super::InitGame(MapName, Options, ErrorMessage);
+    Super::InitGame(MapName, Options, ErrorMessage);
 
-	// Additional game initialization logic for Play scenarios
+    // Additional game initialization logic for Play scenarios
 }

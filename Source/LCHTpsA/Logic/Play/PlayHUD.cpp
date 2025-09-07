@@ -6,28 +6,28 @@
 
 APlayHUD::APlayHUD()
 {
-	// Set this actor to call Tick() every frame
-	PrimaryActorTick.bCanEverTick = true;
+    // Set this actor to call Tick() every frame
+    PrimaryActorTick.bCanEverTick = true;
 }
 
 void APlayHUD::BeginPlay()
 {
-	Super::BeginPlay();
+    Super::BeginPlay();
 
-	// Play-specific HUD initialization
+    // Play-specific HUD initialization
 }
 
 void APlayHUD::DrawHUD()
 {
-	Super::DrawHUD();
+    Super::DrawHUD();
 
-	// Draw HUD elements for Play scenarios
-	// Example: Health bar, score, crosshair, etc.
+    // Draw HUD elements for Play scenarios
+    // Example: Health bar, score, crosshair, etc.
 }
 
 void APlayHUD::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
+    Super::Tick(DeltaTime);
 
-	// HUD update logic for Play scenarios
+    // HUD update logic for Play scenarios
 }

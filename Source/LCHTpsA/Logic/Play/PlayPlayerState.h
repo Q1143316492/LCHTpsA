@@ -12,23 +12,23 @@
 UCLASS()
 class LCHTPSA_API APlayPlayerState : public APlayerState
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	/** Constructor */
-	APlayPlayerState();
+    /** Constructor */
+    APlayPlayerState();
 
 protected:
-	/** Called when the game starts or when spawned */
-	virtual void BeginPlay() override;
+    /** Called when the game starts or when spawned */
+    virtual void BeginPlay() override;
 
-	/** Called every frame */
-	virtual void Tick(float DeltaTime) override;
+    /** Called every frame */
+    virtual void Tick(float DeltaTime) override;
 
 public:
-	/** Called when player state is copied from another player state */
-	virtual void CopyProperties(APlayerState* PlayerState) override;
+    /** Called when player state is copied from another player state */
+    virtual void CopyProperties(APlayerState* PlayerState) override;
 
-	/** Called when player state data needs to be reset */
-	virtual void Reset() override;
+    /** Called when player state data needs to be reset */
+    virtual void Reset() override;
 };

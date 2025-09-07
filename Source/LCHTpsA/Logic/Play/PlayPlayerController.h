@@ -14,24 +14,24 @@ class UInputMappingContext;
 UCLASS()
 class LCHTPSA_API APlayPlayerController : public APlayerController
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	APlayPlayerController();
+    APlayPlayerController();
 
 protected:
-	virtual void BeginPlay() override;
+    virtual void BeginPlay() override;
 
-	virtual void SetupInputComponent() override;
+    virtual void SetupInputComponent() override;
 
-	virtual void Tick(float DeltaTime) override;
+    virtual void Tick(float DeltaTime) override;
 
 public:
-	virtual void OnPossess(APawn* InPawn) override;
+    virtual void OnPossess(APawn* InPawn) override;
 
-	virtual void OnUnPossess() override;
+    virtual void OnUnPossess() override;
 
 protected:
-	UPROPERTY(EditAnywhere, Category = "Input")
-	TArray<UInputMappingContext*> DefaultMappingContexts;
+    UPROPERTY(EditAnywhere, Category = "Input")
+    TArray<UInputMappingContext*> DefaultMappingContexts;
 };

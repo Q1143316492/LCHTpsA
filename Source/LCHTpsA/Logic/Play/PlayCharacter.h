@@ -18,59 +18,59 @@ struct FInputActionValue;
 UCLASS()
 class LCHTPSA_API APlayCharacter : public ACharacter
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	APlayCharacter();
+    APlayCharacter();
 
 protected:
-	virtual void BeginPlay() override;
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+    virtual void BeginPlay() override;
+    virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 public:
-	virtual void Tick(float DeltaTime) override;
-	
-	virtual void PossessedBy(AController* NewController) override;
+    virtual void Tick(float DeltaTime) override;
+    
+    virtual void PossessedBy(AController* NewController) override;
 
-	virtual void UnPossessed() override;
+    virtual void UnPossessed() override;
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	USpringArmComponent* CameraBoom;
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+    USpringArmComponent* CameraBoom;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	UCameraComponent* FollowCamera;
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+    UCameraComponent* FollowCamera;
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Mesh", meta = (AllowPrivateAccess = "true"))
     TObjectPtr<USkeletalMeshComponent> SubMeshComponent;
 
 protected:
-	UPROPERTY(EditAnywhere, Category = "Input")
-	UInputAction* JumpAction;
+    UPROPERTY(EditAnywhere, Category = "Input")
+    UInputAction* JumpAction;
 
-	UPROPERTY(EditAnywhere, Category = "Input")
-	UInputAction* MoveAction;
+    UPROPERTY(EditAnywhere, Category = "Input")
+    UInputAction* MoveAction;
 
-	UPROPERTY(EditAnywhere, Category = "Input")
-	UInputAction* LookAction;
+    UPROPERTY(EditAnywhere, Category = "Input")
+    UInputAction* LookAction;
 
-	UPROPERTY(EditAnywhere, Category = "Input")
-	UInputAction* MouseLookAction;
+    UPROPERTY(EditAnywhere, Category = "Input")
+    UInputAction* MouseLookAction;
 
 protected:
-	void Move(const FInputActionValue& Value);
-	void Look(const FInputActionValue& Value);
+    void Move(const FInputActionValue& Value);
+    void Look(const FInputActionValue& Value);
 
 public:
-	UFUNCTION(BlueprintCallable, Category = "Input")
-	virtual void DoMove(float Right, float Forward);
+    UFUNCTION(BlueprintCallable, Category = "Input")
+    virtual void DoMove(float Right, float Forward);
 
-	UFUNCTION(BlueprintCallable, Category = "Input")
-	virtual void DoLook(float Yaw, float Pitch);
+    UFUNCTION(BlueprintCallable, Category = "Input")
+    virtual void DoLook(float Yaw, float Pitch);
 
-	UFUNCTION(BlueprintCallable, Category = "Input")
-	virtual void DoJumpStart();
+    UFUNCTION(BlueprintCallable, Category = "Input")
+    virtual void DoJumpStart();
 
-	UFUNCTION(BlueprintCallable, Category = "Input")
-	virtual void DoJumpEnd();
+    UFUNCTION(BlueprintCallable, Category = "Input")
+    virtual void DoJumpEnd();
 };

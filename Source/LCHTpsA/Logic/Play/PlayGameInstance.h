@@ -12,23 +12,23 @@
 UCLASS()
 class LCHTPSA_API UPlayGameInstance : public UGameInstance
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	/** Constructor */
-	UPlayGameInstance();
+    /** Constructor */
+    UPlayGameInstance();
 
 protected:
-	/** Called when the game instance is initialized */
-	virtual void Init() override;
+    /** Called when the game instance is initialized */
+    virtual void Init() override;
 
-	/** Called when the game instance is shutting down */
-	virtual void Shutdown() override;
+    /** Called when the game instance is shutting down */
+    virtual void Shutdown() override;
 
 public:
-	/** Called when starting a new game session */
-	virtual void OnStart() override;
+    /** Called when starting a new game session */
+    virtual void OnStart() override;
 
-	/** Called when a level is loaded */
-	virtual void LoadComplete(const float LoadTime, const FString& MapName) override;
+    /** Called when a level is loaded */
+    virtual void LoadComplete(const float LoadTime, const FString& MapName) override;
 };
