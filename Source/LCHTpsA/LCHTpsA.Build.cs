@@ -36,6 +36,7 @@ public class LCHTpsA : ModuleRules
 			"LCHTpsA",
 			"LCHTpsA/Logic",
 			"LCHTpsA/Logic/Play",
+			"LCHTpsA/Logic/Anim",
 		});
 
 		// Uncomment if you are using Slate UI

@@ -38,6 +38,10 @@ APlayCharacter::APlayCharacter()
 
 	SubMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SubMesh"));
 	SubMeshComponent->SetupAttachment(GetMesh());
+
+	GetMesh()->SetVisibility(false);
+	GetMesh()->SetHiddenInGame(false);
+	GetMesh()->VisibilityBasedAnimTickOption = EVisibilityBasedAnimTickOption::AlwaysTickPoseAndRefreshBones;
 }
 
 void APlayCharacter::BeginPlay()

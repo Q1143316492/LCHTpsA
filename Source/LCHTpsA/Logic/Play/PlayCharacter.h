@@ -42,7 +42,7 @@ protected:
 	UCameraComponent* FollowCamera;
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Mesh", meta = (AllowPrivateAccess = "true"))
-    class USkeletalMeshComponent* SubMeshComponent;
+    TObjectPtr<USkeletalMeshComponent> SubMeshComponent;
 
 protected:
 	UPROPERTY(EditAnywhere, Category = "Input")
@@ -58,7 +58,6 @@ protected:
 	UInputAction* MouseLookAction;
 
 protected:
-	// Handlers used by Enhanced Input bindings
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
 
