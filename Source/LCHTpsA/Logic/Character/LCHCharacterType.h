@@ -29,7 +29,7 @@ enum class ECharacterMovementModeType : uint8
 };
 
 UENUM(BlueprintType)
-enum class ECharacterModementStateType : uint8
+enum class ECharacterMovementStateType : uint8
 {
     Idle       UMETA(DisplayName = "Idle"),
     Moving     UMETA(DisplayName = "Moving"),
